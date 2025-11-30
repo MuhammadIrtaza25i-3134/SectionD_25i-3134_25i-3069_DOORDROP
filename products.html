@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products – DoorDrop</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="DoorDrop Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠</a></li>
+                <li><a href="contact.html">📞</a></li>
+                <li><a href="about.html">ℹ️</a></li>
+                <li><a href="cart.html">🛒</a></li>
+                <li><a href="login.html">👤</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search…">
+            <button>🔍</button>
+        </div>
+    </header>
+
+
+    <!-- PRODUCT RESULTS TITLE -->
+    <section class="products-title">
+        <h2>RESULT FOR "MOVIE NIGHT"</h2>
+    </section>
+
+
+    <!-- PRODUCTS GRID -->
+    <section class="products-grid">
+
+        <!-- PRODUCT 1 -->
+        <div class="product-card">
+            <img src="images/lays.png" alt="Lays Classic">
+
+            <p class="p-name">Lays Classic</p>
+            <p class="p-weight">200g</p>
+            <p class="p-price">Rs. 200</p>
+
+            <button class="add-cart-btn" onclick="addToCart('Lays Classic')">Add to Cart</button>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="product-card">
+            <img src="images/popcorn.png" alt="Popcorn Butter">
+
+            <p class="p-name">Hot n Spicy Popcorn</p>
+            <p class="p-weight">150g</p>
+            <p class="p-price">Rs. 130</p>
+
+            <button class="add-cart-btn" onclick="addToCart('Popcorn Hot n Spicy')">Add to Cart</button>
+        </div>
+
+    </section>
+
+
+    <!-- CSS + JS at bottom -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+
+</body>
+</html>
