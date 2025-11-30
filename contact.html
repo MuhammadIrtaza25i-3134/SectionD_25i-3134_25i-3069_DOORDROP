@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – DoorDrop</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="DoorDrop Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠</a></li>
+                <li><a href="contact.html">📞</a></li>
+                <li><a href="about.html">ℹ️</a></li>
+                <li><a href="cart.html">🛒</a></li>
+                <li><a href="login.html">👤</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search…">
+            <button>🔍</button>
+        </div>
+    </header>
+
+
+    <!-- CONTACT US CONTENT -->
+    <section class="contact-container">
+
+        <h1>CONTACT US</h1>
+
+        <form class="contact-box" onsubmit="return submitContactForm()">
+
+            <label>Name</label>
+            <input type="text" id="cname" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" id="cemail" placeholder="Enter your email">
+
+            <label>Message</label>
+            <textarea id="cmessage" placeholder="Write your message"></textarea>
+
+            <button type="submit" class="contact-btn">Submit</button>
+        </form>
+
+    </section>
+
+
+    <!-- CSS + JS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+
+</body>
+</html>
