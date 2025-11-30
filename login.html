@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoorDrop – Login</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="DoorDrop Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠</a></li>
+                <li><a href="contact.html">📞</a></li>
+                <li><a href="about.html">ℹ️</a></li>
+                <li><a href="cart.html">🛒</a></li>
+                <li><a href="login.html">👤</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search…">
+            <button>🔍</button>
+        </div>
+    </header>
+
+
+    <!-- LOGIN SECTION -->
+    <section class="login-container">
+
+        <h1>Welcome Back</h1>
+
+        <form class="login-box" onsubmit="return loginFunction()">
+
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Enter username">
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+
+            <button type="submit" class="login-btn">Login</button>
+
+        </form>
+
+        <p class="signup-text">
+            Don't have an account? <a href="#">Sign up</a>
+        </p>
+
+    </section>
+
+    <!-- CSS & JS LINKS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+
+</body>
+</html>
+
