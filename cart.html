@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart – DoorDrop</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="DoorDrop Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠</a></li>
+                <li><a href="contact.html">📞</a></li>
+                <li><a href="about.html">ℹ️</a></li>
+                <li><a href="cart.html">🛒</a></li>
+                <li><a href="login.html">👤</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search…">
+            <button>🔍</button>
+        </div>
+    </header>
+
+
+    <!-- CART TITLE -->
+    <section class="cart-title">
+        <h2>YOUR CART</h2>
+    </section>
+
+
+    <!-- CART ITEM -->
+    <section class="cart-container">
+
+        <div class="cart-item">
+
+            <!-- Product Image -->
+            <img src="images/lays.png" alt="Lays Classic">
+
+            <!-- Product Info -->
+            <div class="cart-info">
+                <p class="cart-name">Lays Classic</p>
+                <p class="cart-weight">200g</p>
+            </div>
+
+            <!-- Price -->
+            <p class="cart-price">Rs. 200</p>
+
+            <!-- Delete Icon -->
+            <button class="delete-btn" onclick="removeItem('Lays Classic')">🗑</button>
+
+        </div>
+
+    </section>
+
+    <!-- Checkout Button -->
+    <section class="checkout-section">
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </section>
+
+
+    <!-- CSS + JS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+
+</body>
+</html>
