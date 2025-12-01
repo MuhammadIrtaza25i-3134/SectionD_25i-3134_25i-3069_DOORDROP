@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – DoorDrop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #ff8c00;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+        }
+
+        .navbar nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .navbar nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .navbar .search-bar {
+            display: flex;
+            gap: 5px;
+        }
+
+        .navbar .search-bar input {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            width: 250px;
+        }
+
+        .navbar .search-bar button {
+            padding: 8px 15px;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        /* ABOUT SECTION */
+        .about-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 40px 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .about-header h1 {
+            color: #ff8c00;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .about-tagline {
+            font-style: italic;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .content-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .text-content h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .text-content p {
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            font-size: 15px;
+        }
+
+        .team-member {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .team-member img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #ff8c00;
+        }
+
+        .team-member h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .values-section {
+            margin-bottom: 40px;
+        }
+
+        .values-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .values-intro {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .values-list {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .values-list li {
+            font-size: 15px;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .milestones-section {
+            margin-top: 40px;
+        }
+
+        .milestones-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .milestones-list {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .milestones-list li {
+            font-size: 15px;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="DoorDrop Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠</a></li>
+                <li><a href="contact.html">📧</a></li>
+                <li><a href="about.html">ℹ️</a></li>
+                <li><a href="cart.html">🛒</a></li>
+                <li><a href="delivery.html">🚚</a></li>
+                <li><a href="favorites.html">🧡</a></li>
+                <li><a href="login.html">👤</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search…">
+            <button>🔍</button>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-container">
+        <div class="about-header">
+            <h1>About DoorDrop</h1>
+        </div>
+        <p class="about-tagline">Making everyday shopping easier, faster, and more personal.</p>
+
+        <div class="content-section">
+            <div class="text-content">
+                <h2>Our Story</h2>
+                <p>DoorDrop started a small idea among some university students who wanted grocery shopping to be smarter and faster instead of scrolling through endless websites, they imagined a system where you could just type a phrase like "movie night" or "exam week"– and get what you needed. Today, DoorDrop brings that idea to life,delivering snacks,groceries and everyday items to students, families and professionals across the city.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/ayesha.jpg" alt="Ayesha Waqar Dar">
+                    <h3>Ayesha Waqar Dar</h3>
+                    <p>CEO and Founder</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="text-content">
+                <h2>Our Mission</h2>
+                <p>Our mission is to make shopping personal, effortless and delightful. DoorDrop saves time for people by recommending the right product for every situation and offering a one click reorder system.</p>
+
+                <div class="values-section">
+                    <h2>Our Values</h2>
+                    <p class="values-intro">At DoorDrop, we believe in:</p>
+                    <ol class="values-list">
+                        <li>1. Convenience with care</li>
+                        <li>2. Innovation with purpose</li>
+                        <li>3. Community and trust</li>
+                    </ol>
+                </div>
+
+                <div class="milestones-section">
+                    <h2>Milestones</h2>
+                    <ul class="milestones-list">
+                        <li>5000 + DELIVERIES</li>
+                        <li>5.0 RATING</li>
+                        <li>Number 1 Brand in Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/irtaza.jpeg" alt="Chaudhry Muhammad Irtaza">
+                    <h3>Chaudhry Muhammad Irtaza</h3>
+                    <p>Lead Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
