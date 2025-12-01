@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doordrop – Lays classic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif;}
+    body{background:#ffffff;}
+    header{background:#f57c1f;color:#fff;padding:10px 40px;display:flex;align-items:center;}
+    .logo{font-weight:bold;font-size:22px;margin-right:40px;}
+    .top-icons{display:flex;gap:18px;font-size:18px;}
+    .top-icons span{cursor:pointer;}
+    .search-wrapper{margin-left:auto;}
+    .search-wrapper input{padding:6px 10px;border:none;border-radius:3px;width:170px;}
+    main{padding:25px 40px;}
+    .product-top{display:flex;gap:40px;align-items:flex-start;margin-bottom:30px;}
+    .product-main-img img{max-width:260px;height:auto;display:block;}
+    .product-info{max-width:360px;font-size:14px;}
+    .product-info h1{font-size:18px;margin-bottom:8px;}
+    .product-info p{margin-bottom:4px;}
+    .qty-row{margin:8px 0;}
+    .qty-row span{margin:0 4px;}
+    .btn{display:inline-block;background:#f57c1f;color:#fff;border:none;padding:8px 18px;font-size:13px;cursor:pointer;margin-top:8px;}
+    .btn-wishlist{background:#c61b1b;margin-left:0;}
+    .section-title{font-weight:bold;margin:15px 0 5px;font-size:14px;}
+    .bottom-images{display:flex;gap:30px;margin-top:20px;}
+    .bottom-images img{max-width:160px;height:auto;display:block;}
+    .ingredients{margin-top:10px;font-size:14px;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">DOORDROP</div>
+    <div class="top-icons">
+      <span>🏠</span>
+      <span>❓</span>
+      <span>🛒</span>
+      <span>🧺</span>
+      <span>👤</span>
+    </div>
+    <div class="search-wrapper">
+      <input type="text" placeholder="Search..." value="">
+    </div>
+  </header>
+
+  <main>
+    <section class="product-top">
+      <div class="product-main-img">
+        <img src="images/lays-front.jpeg" alt="Lays classic front pack">
+      </div>
+
+      <div class="product-info">
+        <h1>Product Name : Lays classic</h1>
+        <p>price : Rs 30</p>
+        <p class="qty-row">
+          Quantity : &nbsp; - &nbsp; 1 &nbsp; +
+        </p>
+        <button class="btn">ADD TO CART</button><br>
+        <button class="btn btn-wishlist">ADD TO WISHLIST</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">DESCRIPTION:</div>
+      <p style="font-size:14px;">
+        Crispy, fresh potato chips perfect for your movie night.
+      </p>
+
+      <div class="bottom-images">
+        <img src="images/lays-back.jpeg" alt="Lays classic back pack">
+        <img src="images/lays-front-small.jpeg" alt="Lays classic front small">
+        <div class="ingredients">
+          <div class="section-title">Ingredients:</div>
+          <p>Potatoes, Salt, Vegetable Oil</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
