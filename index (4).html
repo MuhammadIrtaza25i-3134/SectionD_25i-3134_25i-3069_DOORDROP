@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Doordrop - Online Grocery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    /* Top header bar */
+    header {
+      width: 100%;
+      background-color: #f97316; /* orange */
+      color: #ffffff;
+      padding: 10px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-text {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .nav-icons {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 20px;
+    }
+
+    .nav-icons span {
+      cursor: pointer;
+    }
+
+    .search-box {
+      margin-left: 40px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .search-box input {
+      padding: 5px 10px;
+      border-radius: 3px;
+      border: none;
+      width: 180px;
+    }
+
+    .search-box button {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: #333333;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    /* Main content */
+    main {
+      padding: 30px 40px 60px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .category-card {
+      width: 150px;
+      text-align: center;
+    }
+
+    .category-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      overflow: hidden;
+    }
+
+    .category-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .category-title {
+      font-size: 16px;
+      text-transform: capitalize;
+      margin-top: 5px;
+    }
+
+    /* Hero / mobile mockup section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .hero-image {
+      width: 220px;
+      height: 300px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      font-size: 32px;
+      font-weight: 800;
+      color: #7c1c1c;
+      letter-spacing: 2px;
+    }
+
+    /* Simple responsiveness */
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 15px;
+      }
+      .search-box {
+        margin-left: 0;
+      }
+      main {
+        padding: 20px 15px 40px;
+      }
+      .categories {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-section">
+      <!-- Replace with your logo image -->
+      <div class="logo-text">DOORDROP</div>
+    </div>
+
+    <div class="nav-icons">
+      <!-- Replace these with real icons or images as needed -->
+      <span>🏠</span>
+      <span>📦</span>
+      <span>ℹ️</span>
+      <span>🛒</span>
+      <span>🚚</span>
+      <span>❤️</span>
+      <span>👤</span>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+      <button>🔍</button>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <h1>Shop by Categories</h1>
+
+    <section class="categories">
+      <!-- Grocery -->
+      <div class="category-card">
+        <div class="category-image">
+          <!-- Replace src with your grocery basket image -->
+          <img src="images/grocery-basket.jpeg" alt="Grocery" />
+        </div>
+        <div class="category-title">Grocery</div>
+      </div>
+
+      <!-- Beverages -->
+      <div class="category-card">
+        <div class="category-image">
+          <!-- Replace src with your beverages bottles image -->
+          <img src="images/beverages.jpeg" alt="Beverages" />
+        </div>
+        <div class="category-title">beverages</div>
+      </div>
+
+      <!-- Snacks -->
+      <div class="category-card">
+        <div class="category-image">
+          <!-- Replace src with your snacks shelf image -->
+          <img src="images/snacks.jpeg" alt="Snacks" />
+        </div>
+        <div class="category-title">snacks</div>
+      </div>
+
+      <!-- Dairy -->
+      <div class="category-card">
+        <div class="category-image">
+          <!-- Replace src with your dairy image -->
+          <img src="images/dairy.jpeg" alt="Dairy" />
+        </div>
+        <div class="category-title">Dairy</div>
+      </div>
+
+      <!-- Fruits & Vegetables -->
+      <div class="category-card">
+        <div class="category-image">
+          <!-- Replace src with your fruits and vegetables image -->
+          <img src="images/fruits-vegetables.jpeg" alt="Fruits and Vegetables" />
+        </div>
+        <div class="category-title">fruits&amp;vegetables</div>
+      </div>
+    </section>
+
+    <!-- Hero section at bottom -->
+    <section class="hero">
+      <div class="hero-image">
+        <!-- Replace with your phone-with-groceries mockup image -->
+        <img src="images/phone-groceries.png" alt="Groceries on phone" />
+      </div>
+      <div class="hero-text">ONE CLICK AWAY</div>
+    </section>
+  </main>
+</body>
+</html>
