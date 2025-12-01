@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart – DoorDrop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #ff8c00;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo img {
+            height: 60px;
+        }
+
+        .navbar nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            color: black;
+            text-decoration: none;
+            font-size: 28px;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar nav a:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar .search-bar {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        .navbar .search-bar input {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px 0 0 3px;
+            width: 200px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .navbar .search-bar button {
+            padding: 10px 15px;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 0 3px 3px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar .search-bar button svg {
+            width: 18px;
+            height: 18px;
+            fill: #666;
+        }
+
+        /* CART SECTION */
+        .cart-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .cart-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .cart-header h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .cart-subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .cart-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+
+        /* CART ITEMS */
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .cart-item {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .item-row {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .item-row label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .item-row .value {
+            font-size: 16px;
+        }
+
+        .product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+        .quantity-selector button {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            background-color: white;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 3px;
+        }
+
+        .quantity-selector button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .quantity-selector span {
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .remove-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .remove-btn:hover {
+            color: #ff0000;
+        }
+
+        /* CART SUMMARY */
+        .cart-summary {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            height: fit-content;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .summary-row.total {
+            font-weight: bold;
+            font-size: 18px;
+            padding-top: 15px;
+            border-top: 2px solid #ccc;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background-color: #ff8c00;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .checkout-btn:hover {
+            background-color: #e67e00;
+        }
+
+        @media (max-width: 768px) {
+            .cart-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="DoorDrop Logo">
+            </a>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html" title="Home">🏠</a></li>
+                <li><a href="contact.html" title="Contact">📞</a></li>
+                <li><a href="about.html" title="About">ℹ️</a></li>
+                <li><a href="cart.html" title="Cart">🛒</a></li>
+                <li><a href="delivery.html" title="Delivery">🚚</a></li>
+                <li><a href="favorites.html" title="Favorites">🧡</a></li>
+                <li><a href="login.html" title="Account">👤</a></li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- CART SECTION -->
+    <section class="cart-container">
+        <div class="cart-header">
+            <span style="font-size: 32px;">🛒</span>
+            <h1>Your Shopping Cart</h1>
+        </div>
+        <p class="cart-subtitle">Review your items before checkout.</p>
+
+        <div class="cart-content">
+            <!-- CART ITEMS -->
+            <div class="cart-items">
+                <div class="cart-item">
+                    <div class="item-row">
+                        <label>Product Image :</label>
+                        <img src="images/lays-front-small.jpeg" alt="Lays classic front small">
+                    </div>
+
+                    <div class="item-row">
+                        <label>Product Name :</label>
+                        <span class="value">Lays Classic Chips</span>
+                    </div>
+
+                    <div class="item-row">
+                        <label>Price :</label>
+                        <span class="value">Rs 30</span>
+                    </div>
+
+                    <div class="item-row">
+                        <label>Quantity Selector :</label>
+                        <div class="quantity-selector">
+                            <button onclick="updateQuantity(0, -1)">-</button>
+                            <span id="quantity-0">2</span>
+                            <button onclick="updateQuantity(0, 1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="item-row">
+                        <label>Remove :</label>
+                        <button class="remove-btn" onclick="removeItem(0)">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- You can add more cart items here -->
+            </div>
+
+            <!-- CART SUMMARY -->
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal =</span>
+                    <span id="subtotal">Rs 60</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Charges =</span>
+                    <span id="delivery">Rs 0</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total =</span>
+                    <span id="total">Rs 60</span>
+                </div>
+
+                <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Cart data
+        let cartItems = [
+            {
+                id: 0,
+                name: "Lays Classic Chips",
+                price: 30,
+                quantity: 2,
+                image: "https://via.placeholder.com/120x120/FFD700/333333?text=Lays+Chips"
+            }
+        ];
+
+        const deliveryCharges = 0;
+
+        // Update quantity
+        function updateQuantity(itemId, change) {
+            const item = cartItems.find(i => i.id === itemId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity < 1) item.quantity = 1;
+                document.getElementById(`quantity-${itemId}`).textContent = item.quantity;
+                updateCartSummary();
+            }
+        }
+
+        // Remove item
+        function removeItem(itemId) {
+            if (confirm('Are you sure you want to remove this item?')) {
+                cartItems = cartItems.filter(i => i.id !== itemId);
+                updateCartSummary();
+                // In a real application, you would also remove the item from the DOM
+                alert('Item removed from cart');
+            }
+        }
+
+        // Update cart summary
+        function updateCartSummary() {
+            const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const total = subtotal + deliveryCharges;
+
+            document.getElementById('subtotal').textContent = `Rs ${subtotal}`;
+            document.getElementById('delivery').textContent = `Rs ${deliveryCharges}`;
+            document.getElementById('total').textContent = `Rs ${total}`;
+        }
+
+        // Proceed to checkout
+        function proceedToCheckout() {
+            if (cartItems.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            // Save cart data to localStorage or session
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            // Redirect to checkout page
+            window.location.href = 'checkout.html';
+        }
+
+        // Initialize cart summary
+        updateCartSummary();
+    </script>
+
+</body>
+</html>
