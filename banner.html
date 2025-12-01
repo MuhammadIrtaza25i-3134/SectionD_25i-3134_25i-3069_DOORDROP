@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoorDrop Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #ff8c00;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo img {
+            height: 60px;
+        }
+
+        .navbar nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            color: black;
+            text-decoration: none;
+            font-size: 28px;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar nav a:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar .search-bar {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        .navbar .search-bar input {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px 0 0 3px;
+            width: 200px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .navbar .search-bar button {
+            padding: 10px 15px;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 0 3px 3px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar .search-bar button svg {
+            width: 18px;
+            height: 18px;
+            fill: #666;
+        }
+
+        /* Page content area */
+        .content {
+            min-height: calc(100vh - 100px);
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="DoorDrop Logo">
+            </a>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html" title="Home">🏠</a></li>
+                <li><a href="contact.html" title="Contact">📞</a></li>
+                <li><a href="about.html" title="About">ℹ️</a></li>
+                <li><a href="cart.html" title="Cart">🛒</a></li>
+                <li><a href="delivery.html" title="Delivery">🚚</a></li>
+                <li><a href="favorites.html" title="Favorites">🧡</a></li>
+                <li><a href="login.html" title="Account">👤</a></li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- PAGE CONTENT AREA -->
+    <div class="content">
+        <!-- Your page content goes here -->
+    </div>
+
+</body>
+</html>

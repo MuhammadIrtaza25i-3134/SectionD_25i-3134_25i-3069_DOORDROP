@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page – DoorDrop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #ff8c00;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+        }
+
+        .navbar nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .navbar nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .navbar .search-bar {
+            display: flex;
+            gap: 5px;
+        }
+
+        .navbar .search-bar input {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            width: 250px;
+        }
+
+        .navbar .search-bar button {
+            padding: 8px 15px;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        /* CHECKOUT SECTION */
+        .checkout-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .checkout-section h1 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .thank-you {
+            text-align: center;
+            color: #ff8c00;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .checkout-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .billing-info h2,
+        .order-info h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .info-row label {
+            font-weight: normal;
+        }
+
+        .info-row .input-box {
+            background-color: #d3d3d3;
+            padding: 8px 12px;
+            border-radius: 3px;
+            min-height: 35px;
+        }
+
+        /* PAYMENT METHOD */
+        .payment-section {
+            margin-top: 40px;
+        }
+
+        .payment-section h2 {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .payment-option label {
+            background-color: #d3d3d3;
+            padding: 10px 40px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .payment-option input[type="radio"]:checked + label {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .payment-icons img {
+            height: 40px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            background-color: white;
+            border-radius: 3px;
+        }
+
+        /* ORDER TOTAL */
+        .order-total {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-left: 50px;
+        }
+
+        .order-total-row {
+            display: flex;
+            gap: 20px;
+            font-size: 16px;
+        }
+
+        .order-total-row strong {
+            min-width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="DoorDrop Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠</a></li>
+                <li><a href="contact.html">📧</a></li>
+                <li><a href="about.html">ℹ️</a></li>
+                <li><a href="cart.html">🛒</a></li>
+                <li><a href="delivery.html">🚚</a></li>
+                <li><a href="favorites.html">🧡</a></li>
+                <li><a href="login.html">👤</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search…">
+            <button>🔍</button>
+        </div>
+    </header>
+
+    <!-- CHECKOUT SECTION -->
+    <section class="checkout-section">
+        <h1>CHECKOUT PAGE</h1>
+        <p class="thank-you">Thank You for Your Order!</p>
+
+        <div class="checkout-content">
+            <!-- BILLING INFORMATION -->
+            <div class="billing-info">
+                <h2>Billing Information</h2>
+                
+                <div class="info-row">
+                    <label>Name :</label>
+                    <div class="input-box" id="billing-name"></div>
+                </div>
+
+                <div class="info-row">
+                    <label>Date :</label>
+                    <div class="input-box" id="billing-date"></div>
+                </div>
+
+                <div class="info-row">
+                    <label>City :</label>
+                    <div class="input-box" id="billing-city"></div>
+                </div>
+            </div>
+
+            <!-- ORDER INFORMATION -->
+            <div class="order-info">
+                <h2 style="visibility: hidden;">Order Information</h2>
+                
+                <div class="info-row">
+                    <label>Order ID :</label>
+                    <div class="input-box" id="order-id"></div>
+                </div>
+
+                <div class="info-row">
+                    <label>Time :</label>
+                    <div class="input-box" id="order-time"></div>
+                </div>
+
+                <div class="info-row">
+                    <label>Address :</label>
+                    <div class="input-box" id="order-address"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAYMENT METHOD -->
+        <div class="payment-section">
+            <h2>Payment Method</h2>
+
+            <div class="payment-options">
+                <div class="payment-option">
+                    <input type="radio" id="cash-delivery" name="payment" value="cash">
+                    <label for="cash-delivery">Cash on delivery</label>
+                </div>
+
+                <div class="payment-option">
+                    <input type="radio" id="card" name="payment" value="card" checked>
+                    <label for="card">Card</label>
+                </div>
+            </div>
+
+            <div class="payment-icons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+            </div>
+
+            <!-- ORDER TOTAL -->
+            <div class="order-total">
+                <div class="order-total-row">
+                    <strong>Sub Total =</strong>
+                    <span id="sub-total">$0.00</span>
+                </div>
+                <div class="order-total-row">
+                    <strong>Delivery charges =</strong>
+                    <span id="delivery-charges">$5.00</span>
+                </div>
+                <div class="order-total-row">
+                    <strong>Order total =</strong>
+                    <span id="order-total">$5.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Generate random Order ID
+        function generateOrderID() {
+            return 'ORD' + Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
+        }
+
+        // Get current date and time
+        function getCurrentDate() {
+            const now = new Date();
+            return now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        function getCurrentTime() {
+            const now = new Date();
+            return now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        // Load checkout data (you can modify this to get data from cart/localStorage)
+        function loadCheckoutData() {
+            // Example data - replace with actual data from your cart
+            const checkoutData = {
+                name: 'John Doe',
+                date: getCurrentDate(),
+                city: 'New York',
+                orderId: generateOrderID(),
+                time: getCurrentTime(),
+                address: '123 Main Street, Apt 4B',
+                subtotal: 45.99,
+                deliveryCharges: 5.00
+            };
+
+            // Populate billing information
+            document.getElementById('billing-name').textContent = checkoutData.name;
+            document.getElementById('billing-date').textContent = checkoutData.date;
+            document.getElementById('billing-city').textContent = checkoutData.city;
+
+            // Populate order information
+            document.getElementById('order-id').textContent = checkoutData.orderId;
+            document.getElementById('order-time').textContent = checkoutData.time;
+            document.getElementById('order-address').textContent = checkoutData.address;
+
+            // Populate order totals
+            document.getElementById('sub-total').textContent = '$' + checkoutData.subtotal.toFixed(2);
+            document.getElementById('delivery-charges').textContent = '$' + checkoutData.deliveryCharges.toFixed(2);
+            document.getElementById('order-total').textContent = '$' + (checkoutData.subtotal + checkoutData.deliveryCharges).toFixed(2);
+        }
+
+        // Load data when page loads
+        window.onload = function() {
+            loadCheckoutData();
+        };
+    </script>
+</body>
+</html>
